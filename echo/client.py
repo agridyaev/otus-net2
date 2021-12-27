@@ -15,8 +15,8 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
     s.connect(srv_addr)
 
     sent_msg = 'Test message'
-    print(f'sending {sent_msg}')
+    print(f'sending "{sent_msg}"')
     s.send(sent_msg.encode('utf-8'))
 
     recv_msg = s.recv(1024).decode('utf-8')
-    print(f'received {recv_msg}')
+    print(f'received "{recv_msg}"')
