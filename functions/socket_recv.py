@@ -16,13 +16,8 @@ with socket.socket() as s:
     # http://httpbin.org/#/HTTP_Methods
     body = '<h1>Hello from OTUS!</h1>\r\n'
     status_line = 'HTTP/1.1 200 OK'
-    headers = '\r\n'.join([
-        status_line,
-        f'Content-Length: {len(body)}',
-        'Content-Type: text/html'
-    ])
     resp = '\r\n\r\n'.join([
-        headers,
+        status_line,
         body
     ])
     sent_bytes = conn.send(resp.encode('utf-8'))
