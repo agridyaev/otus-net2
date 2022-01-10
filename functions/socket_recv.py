@@ -14,8 +14,13 @@ with socket.socket() as s:
 
     # https://developer.mozilla.org/ru/docs/Web/HTTP/Messages
     # http://httpbin.org/#/HTTP_Methods
-    body = '<h1>Hello from OTUS!</h1>\r\n'
     status_line = 'HTTP/1.1 200 OK'
+    # Response header example
+    # headers = '\r\n'.join([
+    #     status_line,
+    #     'Content-Type: text/html; charset=UTF-8'
+    # ])
+    body = '<h1>Hello from OTUS!</h1>'
     resp = '\r\n\r\n'.join([
         status_line,
         body
